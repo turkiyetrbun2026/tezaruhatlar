@@ -11,43 +11,55 @@
   body { font-family: 'Inter', sans-serif; background: #f2f2f2; color: #111; }
 
   header {
-    background: #C8102E;
-    color: #fff;
-    padding: 10px 0;
+    background: transparent;
+    color: #111;
+    padding: 20px 0 8px;
   }
   header .header-inner {
     width: min(100%, 1080px);
     margin: 0 auto;
     padding: 0 18px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    justify-content: center;
   }
-  header h1 { font-size: 15px; font-weight: 700; line-height: 1.2; }
-  header p { font-size: 11px; opacity: 0.85; margin-top: 2px; }
+  header h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #111;
+    text-align: center;
+  }
+  header p { display: none; }
 
   .hero-container {
     display: flex;
     justify-content: center;
-    margin: 0 auto 16px;
+    margin: 0 auto 10px;
     width: 100%;
   }
+  .hero-card {
+    width: min(100%, 320px);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+  }
   .hero-image {
-    width: min(100%, 960px);
+    width: 100%;
+    max-width: 100%;
     height: auto;
-    max-height: none;
     object-fit: contain;
-    border-radius: 18px;
-    border: 1px solid rgba(0,0,0,0.08);
-    box-shadow: 0 14px 24px rgba(0,0,0,0.08);
+    border-radius: 12px;
     display: block;
   }
 
   .wrap {
     width: min(100%, 1080px);
     margin: 0 auto;
-    padding: 16px 18px 24px;
+    padding: 14px 18px 24px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -58,7 +70,7 @@
     flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-end;
-    margin-bottom: 4px;
+    margin-bottom: 14px;
   }
   .quick-links a {
     display: inline-flex;
@@ -169,16 +181,14 @@
 
 <header>
   <div class="header-inner">
-    <span style="font-size:26px">🇹🇷</span>
-    <div>
-      <h1>Türkiye Milli Takımı — Paraguay Maçı &nbsp;|&nbsp; Stadyum Tezahürat Planı</h1>
-      <p>Kale Arkası = tezahüratı başlatan ana grup</p>
-    </div>
+    <h1>🇹🇷 Türkiye Milli Takımı — Paraguay Maçı | Stadyum Tezahürat Planı</h1>
   </div>
 </header>
 
 <div class="hero-container">
-  <img class="hero-image" src="stadium.jpg" alt="Stadyum" />
+  <div class="hero-card">
+    <img class="hero-image" src="stadium.jpg" alt="Stadyum" />
+  </div>
 </div>
 
 <div class="wrap">

@@ -230,6 +230,11 @@
   }
   .video-btn:hover { background: #dde6f8; }
 
+  .hide-video-column th:last-child,
+  .hide-video-column td:last-child {
+    display: none;
+  }
+
   /* İLK YARI */
   .tbl-ilk thead th { background: #C8102E; color: #fff; border-color: #a00d23; }
   .tbl-ilk .min { font-weight: 700; color: #111; }
@@ -306,16 +311,16 @@
   <div class="section-grid">
     <div>
       <!-- ══ İLK YARI ══ -->
-      <table id="ilk-yari" class="tbl-ilk">
+      <table id="ilk-yari" class="tbl-ilk hide-video-column">
     <colgroup>
       <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-      <col class="c-nasil"><col class="c-kim"><col class="c-video">
+      <col class="c-nasil"><col class="c-kim"><!-- <col class="c-video"> -->
     </colgroup>
     <thead>
-      <tr><th colspan="7">İlk Yarı — 0' – 45'</th></tr>
+      <tr><th colspan="6">İlk Yarı — 0' – 45'</th></tr>
       <tr>
         <th>Dakika</th><th>Kod</th><th>Tezahürat</th><th>Sözler</th>
-        <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+        <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><!-- <th>Örnek Video</th> -->
       </tr>
     </thead>
     <tbody>
@@ -441,16 +446,16 @@ Aaaaaa Türkiye!</span></td>
   </table>
 
       <!-- ══ İKİNCİ YARI ══ -->
-      <table id="ikinci-yari" class="tbl-ikinci">
+      <table id="ikinci-yari" class="tbl-ikinci hide-video-column">
         <colgroup>
           <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+          <col class="c-nasil"><col class="c-kim"><!-- <col class="c-video"> -->
         </colgroup>
         <thead>
-          <tr><th colspan="7">İkinci Yarı — 45' – 90'</th></tr>
+          <tr><th colspan="6">İkinci Yarı — 45' – 90'</th></tr>
           <tr>
             <th>Dakika</th><th>Kod</th><th>Tezahürat</th><th>Sözler</th>
-            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><!-- <th>Örnek Video</th> -->
           </tr>
         </thead>
         <tbody>
@@ -553,16 +558,16 @@ Aaaaaa Türkiye! </span></td>
     </div>
     <div>
       <!-- ══ ÖZEL DURUMLAR ══ -->
-      <table id="ozel-durumlar" class="tbl-ozel">
+      <table id="ozel-durumlar" class="tbl-ozel hide-video-column">
         <colgroup>
           <col class="c-ozel-durum"><col class="c-ozel-name"><col class="c-ozel-soz">
-          <col class="c-ozel-nasil"><col class="c-ozel-kim"><col class="c-ozel-video">
+          <col class="c-ozel-nasil"><col class="c-ozel-kim"><!-- <col class="c-ozel-video"> -->
         </colgroup>
         <thead>
-          <tr><th colspan="6">Özel Durumlar</th></tr>
+          <tr><th colspan="5">Özel Durumlar</th></tr>
           <tr>
             <th>Durum</th><th>Tezahürat</th><th>Sözler</th>
-            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><!-- <th>Örnek Video</th> -->
           </tr>
         </thead>
         <tbody>
@@ -609,16 +614,16 @@ Tam zamanı! Tam zamanı! Şimdi!</span></td>
       </table>
 
       <!-- ══ ALTERNATİF MARŞ SÖZLERİ ══ -->
-      <table id="alternatif-sözler" class="tbl-alt">
+      <table id="alternatif-sözler" class="tbl-alt hide-video-column">
         <colgroup>
           <col class="c-min"><col class="c-name"><col class="c-soz">
-          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+          <col class="c-nasil"><col class="c-kim"><!-- <col class="c-video"> -->
         </colgroup>
         <thead>
-          <tr><th colspan="6">Alternatif Marş Sözleri</th></tr>
+          <tr><th colspan="5">Alternatif Marş Sözleri</th></tr>
           <tr>
             <th>Kod</th><th>Marş Adı</th><th>Sözler</th>
-            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><!-- <th>Örnek Video</th> -->
           </tr>
         </thead>
         <tbody>
@@ -647,6 +652,15 @@ Tam zamanı! Tam zamanı! Şimdi!</span></td>
             <td><span class="min">A2</span></td>
             <td><span class="name">Ceddin Dede</span></td>
             <td><span class="soz">La La La La La…</span></td>
+            <td>Tüm tribün birlikte söyler.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video</a></td>
+          </tr>
+
+          <tr class="even">
+            <td><span class="min">A3</span></td>
+            <td><span class="name">Milli Takım Oley</span></td>
+            <td><span class="soz">Oley Milli takım Oley, Oley Milli takım OLey</span></td>
             <td>Tüm tribün birlikte söyler.</td>
             <td>Tüm Stad</td>
             <td><a class="video-btn" href="#" onclick="return false;">▶ Video</a></td>

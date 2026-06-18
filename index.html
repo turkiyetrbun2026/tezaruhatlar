@@ -196,6 +196,14 @@
   .c-nasil { width: 140px; }
   .c-kim   { width: 110px; }
   .c-video { width: 90px; }
+
+  /* ÖZEL DURUMLAR specific column widths */
+  .tbl-ozel .c-ozel-durum { width: 100px; }
+  .tbl-ozel .c-ozel-name  { width: 130px; }
+  .tbl-ozel .c-ozel-soz   { width: 180px; }
+  .tbl-ozel .c-ozel-nasil { width: 150px; }
+  .tbl-ozel .c-ozel-kim   { width: 110px; }
+  .tbl-ozel .c-ozel-video { width: 90px; }
 </style>
 </head>
 <body>
@@ -472,13 +480,13 @@ Aaaaaa Türkiye! (2 kez)</span></td>
       <!-- ══ ÖZEL DURUMLAR ══ -->
       <table id="ozel-durumlar" class="tbl-ozel">
         <colgroup>
-          <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+          <col class="c-ozel-durum"><col class="c-ozel-name"><col class="c-ozel-soz">
+          <col class="c-ozel-nasil"><col class="c-ozel-kim"><col class="c-ozel-video">
         </colgroup>
         <thead>
-          <tr><th colspan="7">Özel Durumlar</th></tr>
+          <tr><th colspan="6">Özel Durumlar</th></tr>
           <tr>
-            <th>Durum</th><th>Kod</th><th>Tezahürat Adı</th><th>Sözler</th>
+            <th>Durum</th><th>Tezahürat Adı</th><th>Sözler</th>
             <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
           </tr>
         </thead>
@@ -486,7 +494,6 @@ Aaaaaa Türkiye! (2 kez)</span></td>
 
           <tr class="even">
             <td><span class="min">⚡ Top karşıya geçince</span></td>
-            <td>—</td>
             <td><span class="name">Islık</span></td>
             <td><span class="soz">🔔🔔🔔</span></td>
             <td>Top karşı tarafa geçince veya defans gerektiğinde güçlü ıslık.</td>
@@ -496,7 +503,6 @@ Aaaaaa Türkiye! (2 kez)</span></td>
 
           <tr class="odd">
             <td><span class="min">😤 Gol yiyince</span></td>
-            <td>—</td>
             <td><span class="name">Motivasyon</span></td>
             <td><span class="soz">Vur! Kır! Parçala!
 Maçı Kazan!</span></td>
@@ -507,7 +513,6 @@ Maçı Kazan!</span></td>
 
           <tr class="even">
             <td><span class="min">🚩 Faul</span></td>
-            <td>—</td>
             <td><span class="name">Yuh + Islık</span></td>
             <td><span class="soz">Yuh! 🔔🔔🔔</span></td>
             <td>Hakem kararı veya faul anında yuh ve güçlü ıslık.</td>
@@ -517,7 +522,6 @@ Maçı Kazan!</span></td>
 
           <tr class="odd">
             <td><span class="min">⏰ Gol yok</span></td>
-            <td>—</td>
             <td><span class="name">Baskı Tezahüratı</span></td>
             <td><span class="soz">Haydi bastır! Haydi bastır! Şimdi!
 Tam zamanı! Tam zamanı! Şimdi!</span></td>

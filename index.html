@@ -36,7 +36,7 @@
   .hero-container {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-start;
+    align-items: stretch;
     justify-content: center;
     margin: 0 auto 10px;
     width: min(100%, 1500px);
@@ -47,13 +47,14 @@
     flex: 0 0 420px;
     width: min(100%, 420px);
     max-width: 420px;
-    aspect-ratio: 420 / 356;
+    min-height: 356px;
     background: transparent;
     padding: 0;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     border: 1px solid #e0e0e0;
+    display: flex;
   }
   .notice-card {
     flex: 0 0 420px;
@@ -103,10 +104,8 @@
   .notice-card p.lead { margin: 6px 0 10px; font-weight: 600; }
   .hero-image {
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    border-radius: 12px;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 
@@ -121,7 +120,7 @@
 
   .section-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.7fr) minmax(320px, 1.3fr);
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
     gap: 18px;
     align-items: start;
   }
@@ -130,7 +129,7 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
-    overflow-x: auto;
+    overflow-x: visible;
   }
 
   @media (max-width: 980px) {
@@ -282,16 +281,16 @@
     <img class="hero-image" src="stadium.jpg" alt="Stadyum" />
   </div>
   <aside class="notice-card" aria-label="Önemli Hatırlatmalar">
-    <p class="lead"><strong>Milli Takımımızın en değerli 12. adamları,:</strong></p>
+    <p class="lead"><strong>🇹🇷 Milli Takımımızın sevgili 12. adamları,</strong></p>
     <h3>📢 Önemli Hatırlatmalar</h3>
     <ul>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9v6h4l5 5V4L9 9H5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.5 7.5c1 1 1.5 2.5 1.5 4.5s-.5 3.5-1.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Lütfen tribün liderlerinin yönlendirmelerini takip edin ve mümkün olduğunca tezahüratlara katılın.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4a6 6 0 0 0-6 6c0 3.3 2.7 6 6 6a5.8 5.8 0 0 0 2.7-.7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 12a2 2 0 0 1-2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 20a6 6 0 0 1-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M7 5c1 1 1 2.5 1 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Tribün lideriniz yoksa çevrenizi dinleyin, tribünün sesine ortak olun.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4c-3 3-3 5.5-2 8s3 4 2 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 4c3 3 3 5.5 2 8s-3 4-2 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10 4c0 2 2 3 2 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>İlk düdükten itibaren, özellikle ilk 30 dakikada güçlü bir baskı kurmamız gerekiyor.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-3 5 3 5h2l3-5-3-5H8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7l3 5-3 5h-2l-3-5 3-5h2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Pozisyonlarda alkış, ıslık ve gerektiğinde yuhalamalarla desteğinizi gösterin.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4v10a3 3 0 1 0 2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M14 12V4h4l-4 8 4 8h-4v-8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Planlananların dışında tezahüratlar başlayabilir; biliyorsanız siz de katılın.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 14l3 3 7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 12l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>Çevremize saygılı olalım, eğlenelim ve takımımızı hep birlikte destekleyelim.</li>
-      <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3v18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6 6h11l-3 4 3 4H6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Türkiye’nin sesini tüm dünyaya duyuralım!</li>
+      <li><span class="icon">📣</span>Lütfen tribün liderlerinin yönlendirmelerini takip edin ve mümkün olduğunca tezahüratlara katılın.</li>
+      <li><span class="icon">👂</span>Tribün lideriniz yoksa çevrenizi dinleyin, tribünün sesine ortak olun.</li>
+      <li><span class="icon">🔥</span>İlk düdükten itibaren, özellikle ilk 30 dakikada güçlü bir baskı kurmamız gerekiyor.</li>
+      <li><span class="icon">👏</span>Pozisyonlarda alkış, ıslık ve gerektiğinde yuhalamalarla desteğinizi gösterin.</li>
+      <li><span class="icon">🎶</span>Planlananların dışında tezahüratlar başlayabilir; biliyorsanız siz de katılın.</li>
+      <li><span class="icon">🤝</span>Çevremize saygılı olalım, eğlenelim ve takımımızı hep birlikte destekleyelim.</li>
+      <li><span class="icon">🇹🇷</span>Türkiye’nin sesini tüm dünyaya duyuralım!</li>
     </ul>
   </aside>
 </div>

@@ -13,37 +13,70 @@
   header {
     background: #C8102E;
     color: #fff;
-    padding: 16px 20px;
+    padding: 10px 0;
+  }
+  header .header-inner {
+    width: min(100%, 1080px);
+    margin: 0 auto;
+    padding: 0 18px;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
   }
-  header h1 { font-size: 17px; font-weight: 700; line-height: 1.2; }
-  header p  { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+  header h1 { font-size: 15px; font-weight: 700; line-height: 1.2; }
+  header p { font-size: 11px; opacity: 0.85; margin-top: 2px; }
 
   .hero-container {
     display: flex;
     justify-content: center;
-    margin: 0 auto 18px;
+    margin: 0 auto 16px;
     width: 100%;
   }
   .hero-image {
-    width: min(100%, 760px);
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 14px;
-    border: 1px solid rgba(0,0,0,0.1);
+    width: min(100%, 960px);
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 14px 24px rgba(0,0,0,0.08);
     display: block;
   }
 
   .wrap {
     width: min(100%, 1080px);
     margin: 0 auto;
-    padding: 20px 18px 24px;
+    padding: 16px 18px 24px;
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 20px;
+  }
+
+  .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 4px;
+  }
+  .quick-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid #C8102E;
+    background: #fff;
+    color: #C8102E;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 700;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .quick-links a:hover {
+    transform: translateY(-1px);
+    background: #ffe8ed;
   }
 
   table {
@@ -86,7 +119,7 @@
   .resp { color: #003087; font-style: normal; }
   .sub  { font-size: 11px; color: #888; }
   .name { font-weight: 600; }
-  .kod  { font-weight: 700; font-size: 12px; }
+  .kod  { font-weight: 700; font-size: 12px; color: #111; }
 
   .video-btn {
     display: inline-flex;
@@ -106,26 +139,26 @@
 
   /* İLK YARI */
   .tbl-ilk thead th { background: #C8102E; color: #fff; border-color: #a00d23; }
-  .tbl-ilk .min { font-weight: 700; color: #C8102E; }
-  .tbl-ilk .kod { color: #C8102E; }
+  .tbl-ilk .min { font-weight: 700; color: #111; }
+  .tbl-ilk .kod { color: #111; }
 
   /* İKİNCİ YARI */
   .tbl-ikinci thead th { background: #003087; color: #fff; border-color: #002060; }
-  .tbl-ikinci .min { font-weight: 700; color: #003087; }
-  .tbl-ikinci .kod { color: #003087; }
+  .tbl-ikinci .min { font-weight: 700; color: #111; }
+  .tbl-ikinci .kod { color: #111; }
 
   /* ÖZEL DURUMLAR */
   .tbl-ozel thead th { background: #8B4500; color: #fff; border-color: #6b3300; }
-  .tbl-ozel .min { font-weight: 700; color: #8B4500; }
+  .tbl-ozel .min { font-weight: 700; color: #111; }
 
   /* ALTERNATİF MARŞLAR */
   .tbl-alt thead th { background: #4a4a4a; color: #fff; border-color: #333; }
-  .tbl-alt .min { font-weight: 700; color: #444; }
-  .tbl-alt .kod { color: #444; }
+  .tbl-alt .min { font-weight: 700; color: #111; }
+  .tbl-alt .kod { color: #111; }
 
   .c-min   { width: 90px; }
   .c-kod   { width: 90px; }
-  .c-name  { width: 150px; }
+  .c-name  { width: 120px; }
   .c-soz   { width: 280px; }
   .c-nasil { width: 170px; }
   .c-kim   { width: 110px; }
@@ -135,10 +168,12 @@
 <body>
 
 <header>
-  <span style="font-size:26px">🇹🇷</span>
-  <div>
-    <h1>Türkiye Milli Takımı — Paraguay Maçı &nbsp;|&nbsp; Stadyum Tezahürat Planı</h1>
-    <p>Kale Arkası = tezahüratı başlatan ana grup</p>
+  <div class="header-inner">
+    <span style="font-size:26px">🇹🇷</span>
+    <div>
+      <h1>Türkiye Milli Takımı — Paraguay Maçı &nbsp;|&nbsp; Stadyum Tezahürat Planı</h1>
+      <p>Kale Arkası = tezahüratı başlatan ana grup</p>
+    </div>
   </div>
 </header>
 
@@ -147,9 +182,15 @@
 </div>
 
 <div class="wrap">
+  <nav class="quick-links" aria-label="Bölüm bağlantıları">
+    <a href="#ilk-yari">İlk Yarı</a>
+    <a href="#ikinci-yari">İkinci Yarı</a>
+    <a href="#ozel-durumlar">Özel Durumlar</a>
+    <a href="#alternatif-sözler">Alternatif Marş Sözleri</a>
+  </nav>
 
   <!-- ══ İLK YARI ══ -->
-  <table class="tbl-ilk">
+  <table id="ilk-yari" class="tbl-ilk">
     <colgroup>
       <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
       <col class="c-nasil"><col class="c-kim"><col class="c-video">
@@ -175,22 +216,22 @@
 
       <tr class="odd">
         <td><span class="min">0' Kickoff</span></td>
-        <td><span class="kod">Tezahürat #1</span></td>
+        <td><span class="kod">T1</span></td>
         <td><span class="name">Üçlü Yaptırmaca</span></td>
         <td><span class="soz">Şşşşşşşşt…
 3 – 2 – 1
 Türkiye! Türkiye! 👏</span></td>
-        <td>Maç başladıktan sonra tüm stad şşş der; ardından 3-2-1 geri sayımı, sonra Türkiye Türkiye ve alkış.</td>
+        <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik saglanir, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
       </tr>
 
       <tr class="even">
         <td><span class="min">0' (hemen sonra)</span></td>
-        <td><span class="kod">Tezahürat #2</span></td>
+        <td><span class="kod">T2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
-Aaaaaah Türkiye!</span></td>
+Aaaaaa Türkiye!</span></td>
         <td>Tempolu şekilde söylenir.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
@@ -198,7 +239,7 @@ Aaaaaah Türkiye!</span></td>
 
       <tr class="odd">
         <td><span class="min">10'</span></td>
-        <td><span class="kod">Tezahürat #3</span></td>
+        <td><span class="kod">T3</span></td>
         <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
         <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
@@ -246,7 +287,7 @@ Sert adımlarla her yer inlesin</span></td>
         <td><span class="kod">Tezahürat #2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
-Aaaaaah Türkiye!</span></td>
+Aaaaaa Türkiye!</span></td>
         <td>Tempolu şekilde söylenir.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
@@ -274,7 +315,7 @@ Aaaaaah Türkiye!</span></td>
         <td><span class="kod">Tezahürat #2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
-Aaaaaah Türkiye!</span></td>
+Aaaaaa Türkiye!</span></td>
         <td>Tempolu şekilde söylenir.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
@@ -284,7 +325,7 @@ Aaaaaah Türkiye!</span></td>
   </table>
 
   <!-- ══ İKİNCİ YARI ══ -->
-  <table class="tbl-ikinci">
+  <table id="ikinci-yari" class="tbl-ikinci">
     <colgroup>
       <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
       <col class="c-nasil"><col class="c-kim"><col class="c-video">
@@ -300,12 +341,12 @@ Aaaaaah Türkiye!</span></td>
 
       <tr class="odd">
         <td><span class="min">45' Kickoff</span></td>
-        <td><span class="kod">Tezahürat #1</span></td>
+        <td><span class="kod">T1</span></td>
         <td><span class="name">Üçlü Yaptırmaca</span></td>
         <td><span class="soz">Şşşşşşşşt…
 3 – 2 – 1
 Türkiye! Türkiye! 👏</span></td>
-        <td>Aynı şekilde — şşş, 3-2-1, Türkiye Türkiye ve alkış.</td>
+        <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik saglanir, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
       </tr>
@@ -315,7 +356,7 @@ Türkiye! Türkiye! 👏</span></td>
         <td><span class="kod">Tezahürat #2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
-Aaaaaah Türkiye!</span></td>
+Aaaaaa Türkiye!</span></td>
         <td>Tempolu şekilde söylenir.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
@@ -368,7 +409,7 @@ Adın yazılacak mücevher taşa (x2)</span></td>
         <td><span class="kod">Tezahürat #2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
-Aaaaaah Türkiye! (2 kez)</span></td>
+Aaaaaa Türkiye! (2 kez)</span></td>
         <td>Batı ve Doğu tribünleri birlikte söyler.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
@@ -395,7 +436,7 @@ Aaaaaah Türkiye! (2 kez)</span></td>
   </table>
 
   <!-- ══ ÖZEL DURUMLAR ══ -->
-  <table class="tbl-ozel">
+  <table id="ozel-durumlar" class="tbl-ozel">
     <colgroup>
       <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
       <col class="c-nasil"><col class="c-kim"><col class="c-video">
@@ -455,7 +496,7 @@ Tam zamanı! Tam zamanı! Şimdi!</span></td>
   </table>
 
   <!-- ══ ALTERNATİF MARŞ SÖZLERİ ══ -->
-  <table class="tbl-alt">
+  <table id="alternatif-sözler" class="tbl-alt">
     <colgroup>
       <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
       <col class="c-nasil"><col class="c-kim"><col class="c-video">

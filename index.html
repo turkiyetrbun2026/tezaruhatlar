@@ -65,12 +65,33 @@
     gap: 20px;
   }
 
+  .section-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
+    gap: 18px;
+    align-items: start;
+  }
+
+  .section-grid > div {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  @media (max-width: 980px) {
+    .section-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .quick-links {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: flex-end;
-    margin-bottom: 14px;
+    margin: 0 0 14px auto;
+    width: min(100%, 1080px);
+    margin-left: auto;
   }
   .quick-links a {
     display: inline-flex;
@@ -129,7 +150,7 @@
   .soz  { white-space: pre-wrap; word-break: break-word; overflow-wrap: anywhere; font-style: italic; color: #222; margin: 0; }
   .call { color: #C8102E; font-weight: 600; font-style: normal; }
   .resp { color: #003087; font-style: normal; }
-  .sub  { font-size: 11px; color: #888; }
+  .sub  { font-size: 10px; color: #666; }
   .name { font-weight: 600; }
   .kod  { font-weight: 700; font-size: 12px; color: #111; }
 
@@ -169,10 +190,10 @@
   .tbl-alt .kod { color: #111; }
 
   .c-min   { width: 90px; }
-  .c-kod   { width: 90px; }
+  .c-kod   { width: 70px; }
   .c-name  { width: 120px; }
-  .c-soz   { width: 280px; }
-  .c-nasil { width: 170px; }
+  .c-soz   { width: 220px; }
+  .c-nasil { width: 140px; }
   .c-kim   { width: 110px; }
   .c-video { width: 90px; }
 </style>
@@ -231,7 +252,7 @@
         <td><span class="soz">Şşşşşşşşt…
 3 – 2 – 1
 Türkiye! Türkiye! 👏</span></td>
-        <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik saglanir, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
+        <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik sağlanır, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
         <td>Tüm Stad</td>
         <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
       </tr>
@@ -266,7 +287,7 @@ Aaaaaa Türkiye!</span></td>
 
       <tr class="even">
         <td><span class="min">15'</span></td>
-        <td><span class="kod">Tezahürat #4</span></td>
+        <td><span class="kod">T4</span></td>
         <td><span class="name">Türkiye! Şak Şak Şak</span></td>
         <td><span class="soz">Türkiye! 👏 👏 👏</span></td>
         <td>Tüm stad Türkiye ardından üç kez kuvvetli alkış.</td>
@@ -294,7 +315,7 @@ Sert adımlarla her yer inlesin</span></td>
 
       <tr class="even">
         <td><span class="min">25'</span></td>
-        <td><span class="kod">Tezahürat #2</span></td>
+        <td><span class="kod">T2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
 Aaaaaa Türkiye!</span></td>
@@ -305,7 +326,7 @@ Aaaaaa Türkiye!</span></td>
 
       <tr class="odd">
         <td><span class="min">30'</span></td>
-        <td><span class="kod">Tezahürat #3</span></td>
+        <td><span class="kod">T3</span></td>
         <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
         <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
@@ -322,7 +343,7 @@ Aaaaaa Türkiye!</span></td>
 
       <tr class="even">
         <td><span class="min">40'</span></td>
-        <td><span class="kod">Tezahürat #2</span></td>
+        <td><span class="kod">T2</span></td>
         <td><span class="name">Lay Lay Lay</span></td>
         <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
 Aaaaaa Türkiye!</span></td>
@@ -334,49 +355,51 @@ Aaaaaa Türkiye!</span></td>
     </tbody>
   </table>
 
-  <!-- ══ İKİNCİ YARI ══ -->
-  <table id="ikinci-yari" class="tbl-ikinci">
-    <colgroup>
-      <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-      <col class="c-nasil"><col class="c-kim"><col class="c-video">
-    </colgroup>
-    <thead>
-      <tr><th colspan="7">İkinci Yarı — 45' – 90'</th></tr>
-      <tr>
-        <th>Dakika</th><th>Kod</th><th>Tezahürat Adı</th><th>Sözler</th>
-        <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
-      </tr>
-    </thead>
-    <tbody>
+  <div class="section-grid">
+    <div>
+      <!-- ══ İKİNCİ YARI ══ -->
+      <table id="ikinci-yari" class="tbl-ikinci">
+        <colgroup>
+          <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
+          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+        </colgroup>
+        <thead>
+          <tr><th colspan="7">İkinci Yarı — 45' – 90'</th></tr>
+          <tr>
+            <th>Dakika</th><th>Kod</th><th>Tezahürat Adı</th><th>Sözler</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <tr class="odd">
-        <td><span class="min">45' Kickoff</span></td>
-        <td><span class="kod">T1</span></td>
-        <td><span class="name">Üçlü Yaptırmaca</span></td>
-        <td><span class="soz">Şşşşşşşşt…
+          <tr class="odd">
+            <td><span class="min">45' Kickoff</span></td>
+            <td><span class="kod">T1</span></td>
+            <td><span class="name">Üçlü Yaptırmaca</span></td>
+            <td><span class="soz">Şşşşşşşşt…
 3 – 2 – 1
 Türkiye! Türkiye! 👏</span></td>
-        <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik saglanir, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Maç başladıktan sonra tüm stad uzun bir şşşşşşşşşşş der;  sessizlik saglanir, ardından 3-2-1 geri sayımı, sonra iki defa yuksek sesle Türkiye Türkiye ve alkış.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="even">
-        <td><span class="min">45' (hemen sonra)</span></td>
-        <td><span class="kod">Tezahürat #2</span></td>
-        <td><span class="name">Lay Lay Lay</span></td>
-        <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
+          <tr class="even">
+            <td><span class="min">45' (hemen sonra)</span></td>
+            <td><span class="kod">T2</span></td>
+            <td><span class="name">Lay Lay Lay</span></td>
+            <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
 Aaaaaa Türkiye!</span></td>
-        <td>Tempolu şekilde söylenir.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Tempolu şekilde söylenir.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="odd">
-        <td><span class="min">55'</span></td>
-        <td><span class="kod">Tezahürat #3</span></td>
-        <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
-        <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
+          <tr class="odd">
+            <td><span class="min">55'</span></td>
+            <td><span class="kod">T3</span></td>
+            <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
+            <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
 <span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
@@ -384,52 +407,52 @@ Aaaaaa Türkiye!</span></td>
 <span class="call">Stad:</span> <span class="resp">Türkiye</span>
 <span class="call">Kale Arkası:</span> <span class="resp">Şampiyon</span>
 <span class="call">Stad:</span> <span class="resp">Türkiye</span></span></td>
-        <td>Kale Arkası "Karşı taraf beyaz desene" diyerek başlatır. Hazır olunca sözler karşılıklı bağırılır.</td>
-        <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Kale Arkası "Karşı taraf beyaz desene" diyerek başlatır. Hazır olunca sözler karşılıklı bağırılır.</td>
+            <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="even">
-        <td><span class="min">60'</span></td>
-        <td><span class="kod">Tezahürat #4</span></td>
-        <td><span class="name">Türkiye! Şak Şak Şak</span></td>
-        <td><span class="soz">Türkiye! 👏 👏 👏</span></td>
-        <td>Tüm stad Türkiye ardından üç kez kuvvetli alkış.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+          <tr class="even">
+            <td><span class="min">60'</span></td>
+            <td><span class="kod">T4</span></td>
+            <td><span class="name">Türkiye! Şak Şak Şak</span></td>
+            <td><span class="soz">Türkiye! 👏 👏 👏</span></td>
+            <td>Tüm stad Türkiye ardından üç kez kuvvetli alkış.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="odd">
-        <td><span class="min">70' Su Molası</span></td>
-        <td><span class="kod">Marş #2</span></td>
-        <td><span class="name">İzmir'in Dağlarında</span></td>
-        <td><span class="soz">İzmir'in dağlarında çiçekler açar (x2)
+          <tr class="odd">
+            <td><span class="min">70' Su Molası</span></td>
+            <td><span class="kod">Marş #2</span></td>
+            <td><span class="name">İzmir'in Dağlarında</span></td>
+            <td><span class="soz">İzmir'in dağlarında çiçekler açar (x2)
 Altın güneş orda sırmalar saçar (x2)
 Bozulmuş düşmanlar, hep yel gibi kaçar (x2)
 
 Yaşa Mustafa Kemal Paşa yaşa
 Adın yazılacak mücevher taşa (x2)</span></td>
-        <td>Maç başlarken tempolu ve güçlü şekilde söylenir.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Maç başlarken tempolu ve güçlü şekilde söylenir.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="even">
-        <td><span class="min">75'</span></td>
-        <td><span class="kod">Tezahürat #2</span></td>
-        <td><span class="name">Lay Lay Lay</span></td>
-        <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
+          <tr class="even">
+            <td><span class="min">75'</span></td>
+            <td><span class="kod">T2</span></td>
+            <td><span class="name">Lay Lay Lay</span></td>
+            <td><span class="soz">Lay lay lay lay lay lay lay lay laaaaaay…
 Aaaaaa Türkiye! (2 kez)</span></td>
-        <td>Batı ve Doğu tribünleri birlikte söyler.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Batı ve Doğu tribünleri birlikte söyler.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="odd">
-        <td><span class="min">80'</span></td>
-        <td><span class="kod">Tezahürat #3</span></td>
-        <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
-        <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
+          <tr class="odd">
+            <td><span class="min">80'</span></td>
+            <td><span class="kod">T3</span></td>
+            <td><span class="name">Kırmızı Beyaz En Büyük Türkiye</span></td>
+            <td><span class="soz"><span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
 <span class="call">Kale Arkası:</span> <span class="resp">Kırmızı</span>
 <span class="call">Stad:</span> <span class="resp">Beyaz</span>
@@ -437,94 +460,95 @@ Aaaaaa Türkiye! (2 kez)</span></td>
 <span class="call">Stad:</span> <span class="resp">Türkiye</span>
 <span class="call">Kale Arkası:</span> <span class="resp">Şampiyon</span>
 <span class="call">Stad:</span> <span class="resp">Türkiye</span></span></td>
-        <td>Kale Arkası "Karşı taraf beyaz desene" diyerek başlatır. Hazır olunca sözler karşılıklı bağırılır.</td>
-        <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Kale Arkası "Karşı taraf beyaz desene" diyerek başlatır. Hazır olunca sözler karşılıklı bağırılır.</td>
+            <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-    </tbody>
-  </table>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <!-- ══ ÖZEL DURUMLAR ══ -->
+      <table id="ozel-durumlar" class="tbl-ozel">
+        <colgroup>
+          <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
+          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+        </colgroup>
+        <thead>
+          <tr><th colspan="7">Özel Durumlar</th></tr>
+          <tr>
+            <th>Durum</th><th>Kod</th><th>Tezahürat Adı</th><th>Sözler</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+          </tr>
+        </thead>
+        <tbody>
 
-  <!-- ══ ÖZEL DURUMLAR ══ -->
-  <table id="ozel-durumlar" class="tbl-ozel">
-    <colgroup>
-      <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-      <col class="c-nasil"><col class="c-kim"><col class="c-video">
-    </colgroup>
-    <thead>
-      <tr><th colspan="7">Özel Durumlar</th></tr>
-      <tr>
-        <th>Durum</th><th>Kod</th><th>Tezahürat Adı</th><th>Sözler</th>
-        <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
-      </tr>
-    </thead>
-    <tbody>
+          <tr class="even">
+            <td><span class="min">⚡ Top karşıya geçince</span></td>
+            <td>—</td>
+            <td><span class="name">Islık</span></td>
+            <td><span class="soz">🔔🔔🔔</span></td>
+            <td>Top karşı tarafa geçince veya defans gerektiğinde güçlü ıslık.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="even">
-        <td><span class="min">⚡ Top karşıya</span></td>
-        <td>—</td>
-        <td><span class="name">Islık</span></td>
-        <td><span class="soz">🔔🔔🔔</span></td>
-        <td>Top karşı tarafa geçince veya defans gerektiğinde güçlü ıslık.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
-
-      <tr class="odd">
-        <td><span class="min">😤 Gol yiyince</span></td>
-        <td>—</td>
-        <td><span class="name">Motivasyon</span></td>
-        <td><span class="soz">Vur! Kır! Parçala!
+          <tr class="odd">
+            <td><span class="min">😤 Gol yiyince</span></td>
+            <td>—</td>
+            <td><span class="name">Motivasyon</span></td>
+            <td><span class="soz">Vur! Kır! Parçala!
 Maçı Kazan!</span></td>
-        <td>Güçlü ve coşkulu bağırılır.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Güçlü ve coşkulu bağırılır.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="even">
-        <td><span class="min">🚩 Faul</span></td>
-        <td>—</td>
-        <td><span class="name">Yuh + Islık</span></td>
-        <td><span class="soz">Yuh! 🔔🔔🔔</span></td>
-        <td>Hakem kararı veya faul anında yuh ve güçlü ıslık.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+          <tr class="even">
+            <td><span class="min">🚩 Faul</span></td>
+            <td>—</td>
+            <td><span class="name">Yuh + Islık</span></td>
+            <td><span class="soz">Yuh! 🔔🔔🔔</span></td>
+            <td>Hakem kararı veya faul anında yuh ve güçlü ıslık.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="odd">
-        <td><span class="min">⏰ Gol yok</span></td>
-        <td>—</td>
-        <td><span class="name">Baskı Tezahüratı</span></td>
-        <td><span class="soz">Haydi bastır! Haydi bastır! Şimdi!
+          <tr class="odd">
+            <td><span class="min">⏰ Gol yok</span></td>
+            <td>—</td>
+            <td><span class="name">Baskı Tezahüratı</span></td>
+            <td><span class="soz">Haydi bastır! Haydi bastır! Şimdi!
 Tam zamanı! Tam zamanı! Şimdi!</span></td>
-        <td>Hâlâ gol atılamıyorsa ritmik ve güçlü şekilde söylenir.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Hâlâ gol atılamıyorsa ritmik ve güçlü şekilde söylenir.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-    </tbody>
-  </table>
+        </tbody>
+      </table>
 
-  <!-- ══ ALTERNATİF MARŞ SÖZLERİ ══ -->
-  <table id="alternatif-sözler" class="tbl-alt">
-    <colgroup>
-      <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
-      <col class="c-nasil"><col class="c-kim"><col class="c-video">
-    </colgroup>
-    <thead>
-      <tr><th colspan="7">Alternatif Marş Sözleri</th></tr>
-      <tr>
-        <th>Kod</th><th>—</th><th>Marş Adı</th><th>Sözler</th>
-        <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
-      </tr>
-    </thead>
-    <tbody>
+      <!-- ══ ALTERNATİF MARŞ SÖZLERİ ══ -->
+      <table id="alternatif-sözler" class="tbl-alt">
+        <colgroup>
+          <col class="c-min"><col class="c-kod"><col class="c-name"><col class="c-soz">
+          <col class="c-nasil"><col class="c-kim"><col class="c-video">
+        </colgroup>
+        <thead>
+          <tr><th colspan="7">Alternatif Marş Sözleri</th></tr>
+          <tr>
+            <th>Kod</th><th>—</th><th>Marş Adı</th><th>Sözler</th>
+            <th>Nasıl Söylenir</th><th>Kim Söyleyecek</th><th>Örnek Video</th>
+          </tr>
+        </thead>
+        <tbody>
 
-      <tr class="even">
-        <td><span class="min">Alternatif #1</span></td>
-        <td>—</td>
-        <td><span class="name">Kimseyi Görmedim Ben</span></td>
-        <td><span class="soz"><span class="call">Kale Arkası:</span> Kimseyi görmedim ben
+          <tr class="even">
+            <td><span class="min">A1</span></td>
+            <td>—</td>
+            <td><span class="name">Kimseyi Görmedim Ben</span></td>
+            <td><span class="soz"><span class="call">Kale Arkası:</span> Kimseyi görmedim ben
 <span class="resp">Stad:</span> Senden daha güzel
 <span class="call">Kale Arkası:</span> Kimseyi tanımadım ben
 <span class="resp">Stad:</span> Senden daha güzel
@@ -536,24 +560,25 @@ Tam zamanı! Tam zamanı! Şimdi!</span></td>
 <span class="resp">Stad:</span> Senden daha güzel
 <span class="call">Kale Arkası:</span> Senden daha güzel
 <span class="resp">Stad:</span> Senden daha güzel</span></td>
-        <td>Kale Arkası ve Stad karşılıklı söyler.</td>
-        <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+            <td>Kale Arkası ve Stad karşılıklı söyler.</td>
+            <td>Kale Arkası + Tüm Stad<br><span class="sub">(karşılıklı)</span></td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-      <tr class="odd">
-        <td><span class="min">Alternatif #2</span></td>
-        <td>—</td>
-        <td><span class="name">Ceddin Dede</span></td>
-        <td><span class="soz">La La La La La…</span></td>
-        <td>Tüm tribün birlikte söyler.</td>
-        <td>Tüm Stad</td>
-        <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
-      </tr>
+          <tr class="odd">
+            <td><span class="min">A2</span></td>
+            <td>—</td>
+            <td><span class="name">Ceddin Dede</span></td>
+            <td><span class="soz">La La La La La…</span></td>
+            <td>Tüm tribün birlikte söyler.</td>
+            <td>Tüm Stad</td>
+            <td><a class="video-btn" href="#" onclick="return false;">▶ Video ekle</a></td>
+          </tr>
 
-    </tbody>
-  </table>
-
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 </body>
 </html>

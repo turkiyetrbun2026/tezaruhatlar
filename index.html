@@ -38,6 +38,7 @@
     justify-content: center;
     margin: 0 auto 10px;
     width: 100%;
+    gap: 20px;
   }
   .hero-card {
     width: min(100%, 320px);
@@ -47,6 +48,22 @@
     box-shadow: none;
     border: none;
   }
+  .notice-card {
+    width: min(100%, 420px);
+    max-width: 420px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+    font-size: 14px;
+    color: #111;
+  }
+  .notice-card h3 { margin: 0 0 8px; font-size: 15px; }
+  .notice-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .notice-card li { display: flex; gap: 10px; align-items: flex-start; }
+  .notice-card .icon { width: 18px; height: 18px; flex: 0 0 18px; margin-top: 2px; color: #C8102E; }
+  .notice-card p.lead { margin: 6px 0 10px; font-weight: 600; }
   .hero-image {
     width: 100%;
     max-width: 100%;
@@ -223,6 +240,20 @@
   <div class="hero-card">
     <img class="hero-image" src="stadium.jpg" alt="Stadyum" />
   </div>
+  <aside class="notice-card" aria-label="Önemli Hatırlatmalar">
+    <h3>Önemli Hatırlatmalar</h3>
+    <p class="lead">Tribün davranışları ve tezahürat ile ilgili kısa hatırlatmalar</p>
+    <ul>
+      <li><span class="icon">•</span>Tribün liderlerinizin yönlendirmelerini takip edin ve tezahüratlara katılın.</li>
+      <li><span class="icon">•</span>Tribün lideri yoksa, çevrenizi ve stadyumun geri kalanını dinleyerek katılım gösterin.</li>
+      <li><span class="icon">•</span>Maçın başlangıcı ve ilk 30 dakika çok kritik. Enerjiyi yüksek tutalım!</li>
+      <li><span class="icon">•</span>Pozisyonlarda alkış, ıslık ve gerektiğinde yuhalama ile baskıyı artırın.</li>
+      <li><span class="icon">•</span>Planlanan tezahüratlar dışında yeni tezahüratlar başlayabilir. Bildiğiniz kadarıyla katılmaya çalışın.</li>
+      <li><span class="icon">•</span>Çevrenize saygılı olun, eğlenin ve takımımızı sonuna kadar destekleyin.</li>
+      <li><span class="icon">•</span>Unutmayın: Hepimiz A Milli Erkek Futbol Takımımızın 12. adamıyız.</li>
+      <li><span class="icon">•</span>Türkiye taraftarlarının gücünü tüm dünyaya gösterelim!</li>
+    </ul>
+  </aside>
 </div>
 
 <div class="wrap">

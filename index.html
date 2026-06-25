@@ -8,7 +8,65 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: 'Inter', sans-serif; background: #f2f2f2; color: #111; }
+  body { font-family: 'Inter', sans-serif; background: #f2f2f2; color: #111; min-height: 100vh; position: relative; }
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(255,255,255,0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    pointer-events: none;
+    z-index: 900;
+  }
+
+  .overlay-notice-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    pointer-events: none;
+  }
+
+  .overlay-notice {
+    pointer-events: auto;
+    max-width: 760px;
+    width: min(100%, 760px);
+    background: rgba(255,255,255,0.98);
+    border: 1px solid rgba(17,17,17,0.12);
+    border-radius: 24px;
+    padding: 32px 28px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.22);
+    text-align: center;
+    color: #111;
+  }
+
+  .overlay-notice h2 {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .overlay-notice p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.75;
+    white-space: pre-wrap;
+  }
+
+  @media (max-width: 680px) {
+    .overlay-notice {
+      padding: 26px 20px;
+      border-radius: 20px;
+    }
+    .overlay-notice h2 {
+      font-size: 26px;
+    }
+  }
 
   header {
     background: transparent;
@@ -279,6 +337,15 @@
     <h1>🇹🇷 Türkiye — Paraguay Maçı | Stadyum Tezahürat Planı</h1>
   </div>
 </header>
+
+<div class="overlay-notice-wrap" aria-live="polite" aria-atomic="true">
+  <div class="overlay-notice">
+    <h2>🇹🇷 Maç Bitti, Ama Hatırası Kalacak…</h2>
+    <p>Her ne kadar istediğimiz sonucu alamasak da, tribünde unutulmayacak bir atmosfer oluşturduk.
+
+1. adam görevini en güzel şekilde yerine getirdi. Sesiyle, coşkusuyla ve desteğiyle tribünde yer alan herkese gönülden teşekkür ederiz.</p>
+  </div>
+</div>
 
 <div class="hero-container">
   <div class="hero-card">
@@ -629,14 +696,6 @@ Saldır Milli takım Oooooley</span></td>
             <td><span class="min">A2</span></td>
             <td><span class="name">Ceddin Dede</span></td>
             <td><span class="soz">La La La La La…</span></td>
-            <td>Tüm tribün birlikte söyler.</td>
-            <td>Tüm Stad</td>
-          </tr>
-
-          <tr class="even">
-            <td><span class="min">A3</span></td>
-            <td><span class="name">Milli Takım Oley</span></td>
-            <td><span class="soz">Oley Milli takım Oley, Oley Milli takım OLey</span></td>
             <td>Tüm tribün birlikte söyler.</td>
             <td>Tüm Stad</td>
           </tr>
